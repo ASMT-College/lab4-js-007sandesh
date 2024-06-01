@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Validation</title>
+    <link rel="stylesheet" href="radio.css">
+</head>
+<body>
+    <form>
+        <label for="username">Username:<br>
+            <input type="text" placeholder="Username">
+        </label><br>
+        <label for="password">Password:<br>
+            <input type="password" placeholder="Password">
+        </label><br>
+        <label for="confpassword">Confirm password:<br>
+            <input type="password" placeholder="Confirm Password">
+        </label><br>
+        <label for="email">Email:<br>
+            <input type="email" placeholder="Email" id="email">
+        </label><br>
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" id="female" value="female">Female<br>
+        <input type="radio" name="gender" id="male" value="male">Male<br>
+        <input type="radio" name="gender" id="others" value="others">Others<br><br>
+        <button type="button" onclick="validate()">Submit</button>
+    </form>
+
+    <script>
+        function validate() {
+            var gender = document.querySelector('input[name="gender"]:checked');
+            if (gender) {
+                alert(gender.value);
+            } else {
+                alert("Please select a gender.");
+            }
+        }
+    </script>
+</body>
+</html>
